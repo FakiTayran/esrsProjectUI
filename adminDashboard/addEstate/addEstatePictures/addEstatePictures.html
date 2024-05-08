@@ -38,7 +38,7 @@
                 var hashValue = window.location.hash; //urldeki estate id yi almak için hash value yu alıyoruz
 
                 Dropzone.options.mydropzone = {
-                    paramName: "file", // The name that will be used to transfer the file
+                    paramName: "imgs", // The name that will be used to transfer the file
                     maxFilesize: 2, // MB
                     acceptedFiles: "image/*",
                     init: function() {
@@ -58,7 +58,7 @@
                                         "Authorization": `Bearer ${access_token}`
                                     },
                                     data: JSON.stringify({ base64String: base64String }),
-                                    contentType: "multipart/form", // burayı chate sor. çünkü swaggerda böyle yazıyor content type bu bekleniyor.
+                                    contentType: "multipart/form-data", // burayı chate sor. çünkü swaggerda böyle yazıyor content type bu bekleniyor.
                                     success: function (response) {
                                         window.location.href = "/esrsProjectUI/adminDashboard";
                                     },
